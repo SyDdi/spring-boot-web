@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongnao.jack.dao.BrandMapper">
+  <resultMap id="BaseResultMap" type="com.dongnao.jack.bean.Brand">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="brand_id" jdbcType="INTEGER" property="brandId" />
+    <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
+    <result column="brand_alias" jdbcType="VARCHAR" property="brandAlias" />
+    <result column="picture" jdbcType="VARCHAR" property="picture" />
+    <result column="letter" jdbcType="CHAR" property="letter" />
+    <result column="rank" jdbcType="INTEGER" property="rank" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+
+  <!-- 获取指定车系 -->
+  <select id="queryBrandById" resultMap="BaseResultMap">
+      select * from t_car_model where id = #{0}
+  </select>
+
+</mapper>

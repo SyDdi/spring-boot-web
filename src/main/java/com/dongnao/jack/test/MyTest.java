@@ -2,6 +2,7 @@ package com.dongnao.jack.test;
 
 import java.util.HashMap;
 
+import com.dongnao.jack.dao.BrandMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -25,9 +26,18 @@ public class MyTest {
     
     @Autowired
     CommonMapper mapper;
-    
+
+    @Autowired
+    private BrandMapper brandMapper;
     @Test
     public void test1() {
         System.out.println(mapper.queryContent(new HashMap()));
     }
+    @Test
+    public void test2() {
+        System.out.println(brandMapper.queryBrandById(1L));
+    }
+
+
+
 }
